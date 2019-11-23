@@ -109,4 +109,5 @@ export default createAppContainer(createSwitchNavigator({
   
 },{
   initialRouteName: 'Loading'
+  
 }));
