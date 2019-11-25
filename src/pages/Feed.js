@@ -1,41 +1,68 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, View, Dimensions } from 'react-native';
+import { StyleSheet, ScrollView, View, Dimensions, FlatList } from 'react-native';
 import { Block, Text, Avatar, Image } from '../components';
 
 import { Ionicons } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
+const offer =[
+  {
+    id: 1,
+    username:"@edlanio",
+    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+  },
+  {
+    id: 2,
+    username:"@pedro",
+    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+  },
+  {
+    id: 3,
+    username:"@andre",
+    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+  },
+  {
+    id: 4,
+    username:"@marcos",
+    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+  },
+  {
+    id: 5,
+    username:"@marta",
+    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+  },
+  {
+    id: 6,
+    username:"@maria",
+    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+  },
+];
 
 export default class Feed extends Component {
   render() {
     return (
-      <Block flex={1} >
+      <Block flex={0} >
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text size={15} color="#2E384D" height={20} spacing={0} weight='bold' style={{marginTop: 20, marginLeft:20 }} >Sugestões para você</Text>
+          <FlatList 
+            horizontal={true} 
+            showsHorizontalScrollIndicator={false} 
+            data={offer} 
+            style={{ marginTop: 10, paddingHorizontal: 20, minHeight: 135}}
+            ItemSeparatorComponent={
+              () => <View style={{width: 20}}/>
+            }
+            renderItem={
+              ({item}) =>
+                <Block center>
+                  <Avatar style={{width: 60, height: 60}} source={{uri: item.img }} />
+                  <Text size={16} color="#2E384D" height={24} spacing={0} style={{marginTop: 3 }} >{item.username}</Text>
+                </Block>
+            }
+            keyExtractor={item => item.id }
+          />
+          
 
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}  style={{ marginTop:15, maxHeight:105, marginBottom:30 }}>
-            <Block key={1} style={{marginTop:5, marginLeft: 20 }} center >
-              <Avatar style={{width: 60, height: 60}} source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}} />
-              <Text size={16} color="#2E384D" height={24} spacing={0} style={{marginTop: 3 }} >@edlanio</Text>
-            </Block>
-            <Block key={2} style={{marginTop:5, marginLeft: 20 }} center >
-              <Avatar style={{width: 60, height: 60}} source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}} />
-              <Text size={16} color="#2E384D" height={24} spacing={0} style={{marginTop: 3 }} >@edlanio</Text>
-            </Block>
-            <Block key={3} style={{marginTop:5, marginLeft: 20 }} center >
-              <Avatar style={{width: 60, height: 60}} source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}} />
-              <Text size={16} color="#2E384D" height={24} spacing={0} style={{marginTop: 3 }} >@edlanio</Text>
-            </Block>
-            <Block key={4} style={{marginTop:5, marginLeft: 20 }} center >
-              <Avatar style={{width: 60, height: 60}} source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}} />
-              <Text size={16} color="#2E384D" height={24} spacing={0} style={{marginTop: 3 }} >@edlanio</Text>
-            </Block>
-            <Block key={5} style={{marginTop:5, marginHorizontal: 20 }} center >
-              <Avatar style={{width: 60, height: 60}} source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}} />
-              <Text size={16} color="#2E384D" height={24} spacing={0} style={{marginTop: 3 }} >@edlanio</Text>
-            </Block>
-            
-          </ScrollView>
           <View middle style={styles.line}/>
           <Block flex={1}  style={{marginBottom:30}}>
             <Block space='between' row  flex='disabled'>

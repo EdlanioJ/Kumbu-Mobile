@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { ScrollView } from 'react-native';
+
+import { Block, Text } from '../components';
 
 export default class Service extends Component {
   render() {
     return (
-      <View>
+      <Block>
         
-        <Text> Service </Text>
-      </View>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+
+        </ScrollView>
+      </Block>
     )
   }
 }
