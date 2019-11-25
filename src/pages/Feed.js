@@ -9,32 +9,32 @@ const offer =[
   {
     id: 1,
     username:"@edlanio",
-    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
   },
   {
     id: 2,
     username:"@pedro",
-    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
   },
   {
     id: 3,
     username:"@andre",
-    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
   },
   {
     id: 4,
     username:"@marcos",
-    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
   },
   {
     id: 5,
     username:"@marta",
-    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
   },
   {
     id: 6,
     username:"@maria",
-    img: "https://facebook.github.io/react-native/img/tiny_logo.png"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
   },
 ];
 
@@ -48,7 +48,8 @@ export default class Feed extends Component {
             horizontal={true} 
             showsHorizontalScrollIndicator={false} 
             data={offer} 
-            style={{ marginTop: 10, paddingHorizontal: 20, minHeight: 135}}
+            style={{ marginTop: 10, minHeight: 105}}
+            contentContainerStyle={{paddingHorizontal: 20}}
             ItemSeparatorComponent={
               () => <View style={{width: 20}}/>
             }
