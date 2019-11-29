@@ -6,9 +6,10 @@ import Service from '../pages/Service';
 import Local from '../pages/Local';
 
 export default createMaterialTopTabNavigator({
+  Service,
   Feed,
   Local,
-  Service
+ 
 },{
   tabBarOptions: {
     activeTintColor:'#52BA97',

@@ -9,32 +9,32 @@ const offer =[
   {
     id: 1,
     username:"@edlanio",
-    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg"
   },
   {
     id: 2,
     username:"@pedro",
-    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg"
   },
   {
     id: 3,
     username:"@andre",
-    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg"
   },
   {
     id: 4,
     username:"@marcos",
-    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg"
   },
   {
     id: 5,
     username:"@marta",
-    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg"
   },
   {
     id: 6,
     username:"@maria",
-    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-4.jpg"
+    img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg"
   },
 ];
 
