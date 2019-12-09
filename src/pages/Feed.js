@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, View, Dimensions, FlatList } from 'react-native';
+import { StyleSheet, ScrollView, View, Dimensions, FlatList, TouchableOpacity } from 'react-native';
 import { Block, Text, Avatar, Image } from '../components';
 
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
 const offer =[
@@ -112,24 +112,36 @@ export default class Feed extends Component {
           <View middle style={styles.line}/>
 
           <ScrollView style={{marginTop:20}} >
-            <Block style={{ marginBottom: 5 }}>
-              <Block row  flex='disabled'>
-                <Avatar style={{width: 60, height: 60, marginHorizontal:20}} source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}} />
-                <Block style={{backgroundColor:"#d3d3d3", marginRight: 20}}>
-                  <Block  row  style={{marginHorizontal: 10  }}>
+            <Block style={styles.post}>
+              <Block row center >
+                <Avatar style={{width: 60, height: 60}} source={{uri: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg"}} />
+                  <Block  row >
                     <Text color='#2E384D' weight='bold' size={18} >@andre</Text>
-                    <Text color='#2E384D' size={18} > pagou a </Text>
+                    <Text color='#2E384D' size={18} weight={'300'} > pagou a </Text>
                     <Text color='#2E384D' weight='bold' size={18} >Você</Text>
                   </Block>
-                  <Text color='#A3A3A3' size={18} style={{textAlign: 'justify', marginHorizontal: 10}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit.🥰</Text>
-                  <Block>
-
-                  </Block>
-                </Block>
-
-
               </Block>
-
+              <Text size={16} color='#666' style={{textAlign: 'left'}} >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum tempore iusto iure saepe suscipit inventore reprehenderit? Explicabo a, harum voluptatem repellat cum atque necessitatibus excepturi sit quod blanditiis laudantium modi!</Text>
+              <Block row space="between" style={{ width, marginVertical: 10 }}>
+                <Block row >
+                  <Text color="#52BA97" size={12} weight='bold'>KZ 1.000,00 </Text>
+                  <Text color="#666" size={12}>| <Ionicons name='ios-lock' color='#666' size={12}/> 2 horas atrás</Text>
+                </Block>
+                <Block row >
+                  <TouchableOpacity style={{ flexDirection:'row' }}>
+                  <FontAwesome name="comment-o" size={14} /> 
+                    <Text color="#666" size={12}>
+                      0
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={{ flexDirection:'row' }} >
+                    <FontAwesome name="heart-o" size={14} />
+                    <Text color="#666" size={12}> 
+                      10
+                    </Text>
+                  </TouchableOpacity>
+                </Block>
+              </Block>
             </Block>
           </ScrollView>
 
@@ -147,8 +159,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginHorizontal:20,
     alignSelf:'stretch'
-    
-
-
+  },
+  post:{
+    backgroundColor:"#FFF",
+    width: width,
+    elevation: 5,
+    shadowOpacity: 0.8,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowColor:"#000",
+    marginVertical: 10,
+    paddingHorizontal: 20
   }
 })
