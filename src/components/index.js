@@ -6,6 +6,7 @@ import Input from './Input';
 import Image from './Image';
 import Text from './Text';
 import Link from './Link';
+import Line from './Line';
 
 export {
   Avatar,
@@ -15,6 +16,7 @@ export {
   Input,
   Image,
   Link,
+  Line,
   Text,
 }
 

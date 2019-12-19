@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, Dimensions, FlatList, TouchableOpacity } from 'react-native';
-import { Block, Text, Avatar, Image } from '../components';
+import { Block, Text, Avatar, Line } from '../components';
 
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
+const widthFooter= width - 40;
 const offer =[
   {
     id: 1,
@@ -64,11 +65,11 @@ export default class Feed extends Component {
           />
           
 
-          <View middle style={styles.line}/>
+          <Line/>
           <Block flex={1}  style={{marginBottom:30}}>
-            <Block space='between' row  flex='disabled'>
-              <Text size={15} color="#2E384D" height={20} spacing={0} weight='bold' style={{marginTop: 20, marginLeft:20 }} >Locais próximos</Text>
-              <Text size={15} color="#2E384D" height={20} spacing={0} weight='bold' color="#52BA97" style={{marginTop: 20, marginEnd:20 }} onPress={()=>{ console.log('proximo') }} >Ver mais > </Text>
+            <Block space='between' row  flex='disabled' style={{marginTop: 20, marginHorizontal: 20}}>
+              <Text size={15} color="#2E384D" height={20} spacing={0} weight='bold' >Locais próximos</Text>
+              <Text size={15} color="#2E384D" height={20} style={{alignItems: 'center', alignContent:'center' }} spacing={0} weight='bold' color="#52BA97" onPress={()=>{ console.log('proximo') }} >Ver mais <Ionicons name='ios-arrow-forward' color='#52BA97' size={14}/> </Text>
             </Block>
             <ScrollView style={{marginTop:20}} showsVerticalScrollIndicator={false}>
 
@@ -109,7 +110,7 @@ export default class Feed extends Component {
 
           </Block>
 
-          <View middle style={styles.line}/>
+          <Line />
 
           <ScrollView style={{marginTop:20}} >
             <Block style={styles.post}>
@@ -122,22 +123,22 @@ export default class Feed extends Component {
                   </Block>
               </Block>
               <Text size={16} color='#666' style={{textAlign: 'left'}} >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum tempore iusto iure saepe suscipit inventore reprehenderit? Explicabo a, harum voluptatem repellat cum atque necessitatibus excepturi sit quod blanditiis laudantium modi!</Text>
-              <Block row space="between" style={{ width, marginVertical: 10 }}>
+              <Block row space="between" style={{ width: widthFooter , marginVertical: 10 }}>
                 <Block row >
                   <Text color="#52BA97" size={12} weight='bold'>KZ 1.000,00 </Text>
                   <Text color="#666" size={12}>| <Ionicons name='ios-lock' color='#666' size={12}/> 2 horas atrás</Text>
                 </Block>
-                <Block row >
-                  <TouchableOpacity style={{ flexDirection:'row' }}>
-                  <FontAwesome name="comment-o" size={14} /> 
-                    <Text color="#666" size={12}>
-                      0
+                <Block row right >
+                  <TouchableOpacity style={{ flexDirection:'row',alignContent: 'center', alignItems: 'center', marginRight:10 }}>
+                  <FontAwesome name="comment-o" size={15} color='#666' bold /> 
+                    <Text color="#666" size={14} style={{marginLeft: 2}}>
+                       0
                     </Text>
                   </TouchableOpacity>
-                  <TouchableOpacity style={{ flexDirection:'row' }} >
-                    <FontAwesome name="heart-o" size={14} />
-                    <Text color="#666" size={12}> 
-                      10
+                  <TouchableOpacity style={{ flexDirection:'row',alignContent: 'center', alignItems: 'center' }} >
+                    <FontAwesome name="heart-o" size={15} color='#666' bold/>
+                    <Text color="#666" size={14} style={{marginLeft: 2}}> 
+                       10
                     </Text>
                   </TouchableOpacity>
                 </Block>
@@ -152,14 +153,6 @@ export default class Feed extends Component {
   }
 }
 const styles = StyleSheet.create({
-  line: {
-    width: width -40,
-    height: 0.3,
-    borderColor: '#F3F3F3',
-    borderWidth: 1,
-    marginHorizontal:20,
-    alignSelf:'stretch'
-  },
   post:{
     backgroundColor:"#FFF",
     width: width,
@@ -171,6 +164,9 @@ const styles = StyleSheet.create({
     },
     shadowColor:"#000",
     marginVertical: 10,
-    paddingHorizontal: 20
-  }
+    paddingHorizontal: 20,
+    
+    
+  }, 
+
 })
