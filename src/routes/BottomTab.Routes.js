@@ -7,18 +7,18 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { Budge } from '../components/';
 
-import Home from './Home.Routes';
 
-import Notification from '../pages/Notification';
-import Pay from '../pages/Pay';
-import Setting from '../pages/Setting';
-import Wallet from '../pages/Wallet';
+import Feed from './FeedStack.Routes';
+import Notification from './NotificationStack.Routes';
+import Pay from './PaymentStack.Routes';
+import Setting from './SettingStack.Routes';
+import Wallet from './WalletStack.Routes';
 
 const NotWithBudge = props => {
   return <Budge { ...props } />
 };
 export default createBottomTabNavigator({
-  Home,
+  Feed,
   Wallet,
   Pay,
   Notification,
@@ -39,7 +39,7 @@ export default createBottomTabNavigator({
       const { routeName } = navigation.state;
       let IconComponent = Ionicons;
       let iconName;
-      if(routeName === 'Home') {
+      if(routeName === 'Feed') {
         iconName = `ios-home`;
       }else if(routeName === 'Wallet') {
         iconName = `ios-wallet`;

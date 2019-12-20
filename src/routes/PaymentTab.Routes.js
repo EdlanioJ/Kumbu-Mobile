@@ -1,14 +1,13 @@
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
-import{ createAppContainer } from 'react-navigation';
 
-import Feed from '../pages/Feed';
+import Pay from '../pages/Pay';
 import Service from '../pages/Service';
 import Local from '../pages/Local';
 
 export default createMaterialTopTabNavigator({
-  Service,
-  Feed,
+  Pay,
   Local,
+  Service,
  
 },{
   tabBarOptions: {

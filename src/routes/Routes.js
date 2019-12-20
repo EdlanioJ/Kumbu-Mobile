@@ -1,13 +1,12 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import App from './BottomTab.Routes';
 import Auth from './Auth.Routes';
 import Loading from '../pages/Loading';
-import Main from './Main.Routes';
+import Main from './BottomTab.Routes';
 
 export default createAppContainer(createSwitchNavigator({
   Loading,
-  App:{
+  App: {
     screen: Main
   },
   Auth,

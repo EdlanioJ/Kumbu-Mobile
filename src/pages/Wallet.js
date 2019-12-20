@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, FlatList, Dimensions, Image, View } from 'react-native';
+import { TouchableOpacity, FlatList, Dimensions, Image, View, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Text, Block } from '../components';
+import { Text, Budge, Block } from '../components';
 
 import { bai, bfa, bic, sol } from '../assets';
 
@@ -32,14 +32,19 @@ const cardList =[
     number: "3977",
     img: bfa
   }
-]
+];
+
+const NotWithBudge = props => {
+  return <Budge { ...props } />
+};
 export default class Wallet extends Component {
   render() {
     return (
-      <Block>
+      <ScrollView style={{flex: 1}}>
         <Block flex="disabled" style={{ backgroundColor:"#52BA97", height: 280, paddingTop: 20 , paddingHorizontal: 20 }}>
           <Block flex="disabled" row right style={{height: 36, marginButtom: 10 }} >
             <TouchableOpacity activeOpacity={0.4} style={{ height: 32, width: 32, borderRadius: 16, borderColor: "#FFF", alignContent:"center", alignItems:"center", borderWidth: 0.5 }}>
+              <NotWithBudge/>
               <Ionicons name="ios-stats" size={25} color="#FFF" />
             </TouchableOpacity>
 
@@ -75,14 +80,13 @@ export default class Wallet extends Component {
           <FlatList
             showsVerticalScrollIndicator= {false}
             data={ cardList }
+            scrollEnabled={ false }
             contentContainerStyle={{ paddingVertical: 10 }}
             ListFooterComponentStyle={{marginTop: 5}}
             ListFooterComponent={
               <TouchableOpacity activeOpacity={0.2} style={{ flex: 1, backgroundColor:"#FFF", width: width-40, height: 60, flexDirection:'row', paddingHorizontal: 20, marginHorizontal: 20, elevation: 2, shadowOpacity: 0.2,shadowOffset: { width: 0, height: 2 }, shadowColor:"#000", borderRadius: 5, alignContent:'center', alignItems: 'center' }}>
                   <Ionicons name="ios-add-circle-outline" size={30} color="#52BA97"/>
-                  <Text size={18} color="#52BA97" weight="bold" style={{marginLeft: 10}}>Adicionar cartão</Text>
-                
-
+                  <Text size={16} color="#52BA97" weight="bold" style={{marginLeft: 10}}>Adicionar cartão</Text>
               </TouchableOpacity>
             }
             ItemSeparatorComponent={
@@ -106,7 +110,9 @@ export default class Wallet extends Component {
           />
 
         </Block>
-      </Block>
+      
+      </ScrollView>
+        
     )
   }
 }

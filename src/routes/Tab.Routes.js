@@ -1,17 +1,18 @@
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
+import FeedStack from './FeedStack.Routes';
+import WalletStack from './WalletStack.Routes';
+import PaymentStack from './PaymentStack.Routes';
+import NotificationStack from './NotificationStack.Routes';
+import SettingStack from './SettingStack.Routes';
 
-import Home from './Home.Routes';
 
-import Notification from '../pages/Notification';
-import Pay from '../pages/Pay';
-import Setting from '../pages/Setting';
-import Wallet from '../pages/Wallet';
+
 
 export default createBottomTabNavigator({
-  Home,
-  Wallet,
-  Pay,
-  Notification,
-  Setting,
+  FeedStack,
+  WalletStack,
+  PaymentStack,
+  NotificationStack,
+  SettingStack,
 });
