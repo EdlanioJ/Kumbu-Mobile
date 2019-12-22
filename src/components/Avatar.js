@@ -5,12 +5,13 @@ export default class Avatar extends Component {
 
   render(){
 
-    const { style, profile, shadow, logo, ...props } = this.props;
+    const { style, profile, shadow, logo, radius, ...props } = this.props;
     const avatarStyles = [
       styles.avatar,
       style,
       profile && styles.profile,
       logo && styles.logo,
+      radius && {borderRadius: radius}
     ];
 
     return (
@@ -24,7 +25,6 @@ export default class Avatar extends Component {
 
 const styles = StyleSheet.create({
   avatar: {
-    borderRadius: 30,
     alignSelf: 'center',
   },
   profile:{

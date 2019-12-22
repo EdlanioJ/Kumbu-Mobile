@@ -60,8 +60,8 @@ export default class Notification extends Component {
   render() {
     return (
       <Block>
-        <Block row space='between' style={{ paddingVertical: 20, backgroundColor:'#F3F3F3', maxHeight:65, paddingHorizontal:20 }} >
-          <Text weight='bold' color='#2E384D' size={18}>Notificações</Text>
+        <Block row space='between' style={{ paddingVertical: 20, backgroundColor:'#F3F3F3', height:65, paddingHorizontal:20 }} >
+          <Text weight='bold' color='#2E384D' size={16}>Notificações</Text>
           <Text color='#52BA97' size={16} weight='bold'>Configurar</Text>
 
         </Block>
@@ -69,7 +69,7 @@ export default class Notification extends Component {
           
           showsVerticalScrollIndicator= {false}
           ItemSeparatorComponent= {
-            ()=> <Line/>
+            ()=> <Line  color="#F2F2F2"/>
           }
           data={notify}
           style={{ minHeight: 105}}

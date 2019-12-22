@@ -7,10 +7,9 @@ const {width} = Dimensions.get("window");
 export default class Line extends Component {
   render() {
 
-    const { style, width, color, full, ...props } = this.props;
+    const { width, color, full, ...props } = this.props;
     const lineStyles = [
       styles.line,
-      style,
       full && styles.full,
       width && { width },
       color && {borderColor: color}

@@ -9,42 +9,38 @@ const {width} = Dimensions.get('screen');
 
 const cardList =[
   {
-    id: 1,
+    id: "1",
     name: "BAI",
     number: "1234",
     img: bai
   },
   {
-    id: 2,
+    id: "2",
     name: "SOL",
     number: "9843",
     img: sol
   },
   {
-    id: 3,
+    id: "3",
     name: "BIC",
     number: "2535",
     img: bic
   },
   {
-    id: 4,
+    id: "4",
     name: "BFA",
     number: "3977",
     img: bfa
   }
 ];
 
-const NotWithBudge = props => {
-  return <Budge { ...props } />
-};
 export default class Wallet extends Component {
   render() {
     return (
-      <ScrollView style={{flex: 1}}>
+      <ScrollView style={{ flex: 1, backgroundColor:"#f5f5f5" }}>
         <Block flex="disabled" style={{ backgroundColor:"#52BA97", height: 280, paddingTop: 20 , paddingHorizontal: 20 }}>
           <Block flex="disabled" row right style={{height: 36, marginButtom: 10 }} >
             <TouchableOpacity activeOpacity={0.4} style={{ height: 32, width: 32, borderRadius: 16, borderColor: "#FFF", alignContent:"center", alignItems:"center", borderWidth: 0.5 }}>
-              <NotWithBudge/>
               <Ionicons name="ios-stats" size={25} color="#FFF" />
             </TouchableOpacity>
 

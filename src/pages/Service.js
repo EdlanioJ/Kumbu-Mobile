@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, FlatList, Dimensions, Image, StyleSheet, View } from 'react-native';
+import { ScrollView, FlatList, Dimensions, Image, StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Block, Text, Avatar } from '../components';
 
@@ -8,22 +8,22 @@ const { width } = Dimensions.get('window');
 
 const destaques =[
   {
-    id: 1,
+    id: "1",
     img: "https://compass-ssl.xbox.com/assets/ac/8c/ac8cf90c-5e7c-4d34-9504-acfaecdae127.jpg?n=X1X_Image-0_Cross-Sell_1920x540.jpg"
     
   },
   {
-    id: 2,
+    id: "2",
     img: "https://compass-ssl.xbox.com/assets/ac/8c/ac8cf90c-5e7c-4d34-9504-acfaecdae127.jpg?n=X1X_Image-0_Cross-Sell_1920x540.jpg"
     
   },
   {
-    id: 3,
+    id: "3",
     img: "https://compass-ssl.xbox.com/assets/ac/8c/ac8cf90c-5e7c-4d34-9504-acfaecdae127.jpg?n=X1X_Image-0_Cross-Sell_1920x540.jpg"
     
   },
   {
-    id: 4,
+    id: "4",
     img: "https://compass-ssl.xbox.com/assets/ac/8c/ac8cf90c-5e7c-4d34-9504-acfaecdae127.jpg?n=X1X_Image-0_Cross-Sell_1920x540.jpg"
     
   }
@@ -32,19 +32,19 @@ const destaques =[
 
 const services =[
   {
-    id: 1,
+    id: "1",
     name: "Pagar conta",
     detail:"Pagar conta de luz, agua, etc.",
     img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg",
   },
   {
-    id: 2,
+    id: "2",
     name: "Recarga de celular",
     detail:"Unitel, Movicel, etc.",
     img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg",
   },
   {
-    id: 3,
+    id: "3",
     name: "Televisão ",
     detail:"Dstv, Tv a cabo, Zap",
     img: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg",
@@ -67,9 +67,9 @@ export default class Service extends Component {
             }
             renderItem={
               ({item})=>
-              <Block style={style.popular}>
+              <TouchableOpacity activeOpacity={0.2} style={style.popular}>
                 <Image style={style.img} source={{ uri: item.img }}/>
-              </Block>
+              </TouchableOpacity>
             }
             keyExtractor={ item => item.id }
 
@@ -88,13 +88,13 @@ export default class Service extends Component {
             }
             renderItem={
               ({item})=>
-              <Block row center >
+              <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }} >
                 <Avatar style={{width: 60, height: 60}} source={{ uri: item.img }}/>
                 <Block style={{marginLeft: 10}}>
                   <Text color='#333' weight='bold'>{item.name}</Text>
                   <Text weight={'300'} size={12} color='#444'>{item.detail}</Text>
                 </Block>
-              </Block>
+              </TouchableOpacity>
             }
             keyExtractor={ item => item.id }
 
