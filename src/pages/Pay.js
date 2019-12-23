@@ -124,40 +124,6 @@ export default class Feed extends Component {
 
           <Line full color="#F1F1F1" />
 
-          <ScrollView style={{marginTop:20}} >
-            <Block style={styles.post}>
-              <Block row center >
-                <Avatar style={{width: 60, height: 60}} radius={30} source={{uri: "https://icon-library.net/images/user-icon-jpg/user-icon-jpg-29.jpg"}} />
-                  <Block  row >
-                    <Text color='#2E384D' weight='bold' size={18} >@andre</Text>
-                    <Text color='#2E384D' size={18} weight={'300'} > pagou a </Text>
-                    <Text color='#2E384D' weight='bold' size={18} >Você</Text>
-                  </Block>
-              </Block>
-              <Text size={16} color='#666' style={{textAlign: 'left'}} >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum tempore iusto iure saepe suscipit inventore reprehenderit? Explicabo a, harum voluptatem repellat cum atque necessitatibus excepturi sit quod blanditiis laudantium modi!</Text>
-              <Block row space="between" style={{ width: widthFooter , marginVertical: 10 }}>
-                <Block row >
-                  <Text color="#52BA97" size={12} weight='bold'>KZ 1.000,00 </Text>
-                  <Text color="#a6a6a6" size={12}>| <Ionicons name='ios-lock' color='#a6a6a6' size={12}/> 2 horas atrás</Text>
-                </Block>
-                <Block row right >
-                  <TouchableOpacity style={{ flexDirection:'row',alignContent: 'center', alignItems: 'center', marginRight:10 }}>
-                  <FontAwesome name="comment-o" size={15} color='#666' bold /> 
-                    <Text color="#a6a6a6" size={14} style={{marginLeft: 2}}>
-                       0
-                    </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={{ flexDirection:'row',alignContent: 'center', alignItems: 'center' }} >
-                    <FontAwesome name="heart-o" size={15} color='#666' bold/>
-                    <Text color="#a6a6a6" size={14} style={{marginLeft: 2}}> 
-                       10
-                    </Text>
-                  </TouchableOpacity>
-                </Block>
-              </Block>
-            </Block>
-          </ScrollView>
-
         </ScrollView>
 
         <Modal
