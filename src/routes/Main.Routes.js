@@ -6,7 +6,7 @@ import { Input } from '../components';
 
 import TabNavigation from './BottomTab.Routes';
 import Search from '../pages/Search';
-import Camera from '../pages/Camera';
+import CameraReader from '../pages/CameraReader';
 
 
 export default createStackNavigator({
@@ -22,7 +22,7 @@ export default createStackNavigator({
        
       },
       headerLeft:  (
-        <TouchableOpacity style={ style.Button } onPress={ ()=> navigation.navigate('Camera') } >
+        <TouchableOpacity style={ style.Button } onPress={ ()=> navigation.navigate('CameraReader') } >
           <FontAwesome name="qrcode" size={25} color='#52BA97' />
         </TouchableOpacity>),
       headerRight: ( 
@@ -41,8 +41,8 @@ export default createStackNavigator({
       headerRight: ( <Input style={{ width: 275, header: 30 }} placeholder="Quem desejas pagar"  />)
     }
   },
-  Camera: {
-    screen: Camera,
+  CameraReader: {
+    screen: CameraReader,
     navigationOptions: {
       header: null,
     }

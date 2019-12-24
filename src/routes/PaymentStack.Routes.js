@@ -5,10 +5,10 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import PaymentTab from './PaymentTab.Routes';
 import Search from '../pages/Search';
-import Camera from '../pages/Camera';
+import CameraReader from '../pages/CameraReader';
 
 
-export default createStackNavigator({
+const PaymentStack = createStackNavigator({
   Payment: {
     screen: PaymentTab,
     navigationOptions: ({navigation}) =>({
@@ -19,7 +19,7 @@ export default createStackNavigator({
         borderBottomWidth: 0,
       },
       headerLeft:  (
-        <TouchableOpacity style={{ width: 36, height: 36, alignContent: 'center', alignItems: 'center', marginHorizontal: 20, marginVertical: 5 }} onPress={ ()=> navigation.navigate('Camera') } >
+        <TouchableOpacity style={{ width: 36, height: 36, alignContent: 'center', alignItems: 'center', marginHorizontal: 20, marginVertical: 5 }} onPress={ ()=> navigation.navigate('CameraReader') } >
           <FontAwesome name="qrcode" size={25} color='#52BA97' />
         </TouchableOpacity>),
       headerRight: ( 
@@ -31,8 +31,8 @@ export default createStackNavigator({
     })
   },
   Search,
-  Camera: {
-    screen: Camera,
+  CameraReader: {
+    screen: CameraReader,
     navigationOptions: {
       header: null,
     }
@@ -40,3 +40,12 @@ export default createStackNavigator({
   },
 
 })
+PaymentStack.navigationOptions = ({ navigation }) => {   
+  let tabBarVisible = true;   
+  if(navigation.state.index > 0) {
+    tabBarVisible = false;   
+  }
+    return { tabBarVisible, }; 
+  };
+
+  export default PaymentStack;

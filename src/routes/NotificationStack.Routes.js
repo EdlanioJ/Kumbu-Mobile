@@ -2,7 +2,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import Notification from '../pages/Notification';
 
-export default createStackNavigator({
+const NotificationStack = createStackNavigator({
   Notification: {
     screen: Notification,
     navigationOptions: {
@@ -10,3 +10,12 @@ export default createStackNavigator({
     }
   }
 })
+NotificationStack.navigationOptions = ({ navigation }) => {   
+  let tabBarVisible = true;   
+  if(navigation.state.index > 0) {
+    tabBarVisible = false;   
+  }
+    return { tabBarVisible, }; 
+  };
+
+  export default NotificationStack;
