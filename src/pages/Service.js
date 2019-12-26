@@ -67,7 +67,7 @@ export default class Service extends Component {
             }
             renderItem={
               ({item})=>
-              <TouchableOpacity activeOpacity={0.2} style={style.popular}>
+              <TouchableOpacity activeOpacity={0.3} style={style.popular}>
                 <Image style={style.img} source={{ uri: item.img }}/>
               </TouchableOpacity>
             }

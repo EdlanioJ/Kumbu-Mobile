@@ -18,9 +18,9 @@ export default class Loading extends Component {
   render() {
     return (
       <Block middle center style={{backgroundColor:"#52BA97"}} >
-        <StatusBar barStyle="dark-content" backgroundColor="#52BA97"/>
+        
         <Text size={28} color="#2E384D" height={32} spacing={0} weight='bold' style={{marginBottom: 6 }}>Kumbú</Text>
-        <ActivityIndicator/>
+        <ActivityIndicator color="#FFF" size="large" />
       </Block>
     );
 

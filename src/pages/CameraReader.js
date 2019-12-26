@@ -9,8 +9,8 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { Block, Text } from '../components/';
 
-const { width } = Dimensions.get('window')
-const qrSize = width * 0.7
+const { width, height } = Dimensions.get('window')
+const qrSize = width * 0.9
 
 
 export default class CameraReader extends Component {
@@ -53,14 +53,13 @@ export default class CameraReader extends Component {
         <BarCodeScanner onBarCodeScanned = {
           scanned ? undefined : this.handleBarCodeScanned
         }
-        style = {{ flex: 1, alignItems: 'center' }}
+        style = {{ flex: 1, alignItems: 'center', width, height,  }}
         >
-          <Text size={ width * 0.09 } color="FFF" center style={{ width: '70%', marginTop: '10%' }} >Leia o Qr Code</Text>
-          <Block flex="disabled" style={{ marginTop: '20%', marginBottom:'20%' }}>
-            <Ionicons name="md-qr-scanner" color="#FFF" size={qrSize} />
+          <Text size={ width * 0.09 } color="#FFF"  style={{ marginTop: '20%', alignItems: 'center' }} >Leia o Qr Code</Text>
+          <Block flex="disabled" style={{ marginTop: '20%', marginBottom:'30%' }}>
+            <Ionicons name="ios-qr-scanner" color="#FFF" size={qrSize} />
           </Block>
-          
-          <Text size={ width * 0.05 } color="#FFF" center style={{width:'70%'}} onPress={ () => navigation.pop() } >cancelar</Text>
+          <Text size={ width * 0.05 } color="#FFF" style={{ alignItems: 'center', alignContent:'center', alignSelf: 'center' }} onPress={ () => navigation.pop() } >cancelar</Text>
         </BarCodeScanner>
         {
           scanned && (<Button title = {
@@ -74,7 +73,7 @@ export default class CameraReader extends Component {
             />
           )
         }
-        <StatusBar hidden />
+        <StatusBar backgroundColor="#000" />
       </Block>
       
     );
