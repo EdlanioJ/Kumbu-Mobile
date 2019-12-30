@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+import { ButtonContainer } from './styles';
 
-
-import { TouchableOpacity } from './styles';
-
-export default class Button extends Component {
+export default function Button(props) {
   
+  const { children, ...props} = props;
 
-  render(){
-    const { children, opacity, ...props } = this.props;
-    return (
-      <TouchableOpacity activeOpacity = { opacity || 0.8 } {...props}>
-        { children }
-      </TouchableOpacity>
-      )
-  }
-
+  return (
+    <ButtonContainer {...props}>
+      {children}
+    </ButtonContainer>
+    
+  );
 }
